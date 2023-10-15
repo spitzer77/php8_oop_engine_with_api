@@ -48,8 +48,8 @@ The API return one random voting result in two mode:
 ### Requests in Postman
 <table>
 <tr>
-<td>Mode</td>
-<td>Postman query</td>
+<td><b>Mode</b></td>
+<td><b>Postman query</b></td>
 </tr>
 <tr>
 <td>For all data</td>
