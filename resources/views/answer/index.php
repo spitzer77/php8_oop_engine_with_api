@@ -2,7 +2,7 @@
 
 <?php $this->start('page_content') ?>
     <div>
-        <h3>Votes page</h3>
+        <h3><?=$data['title']?></h3>
 
         <table class="table table-striped">
             <thead>
