@@ -69,7 +69,7 @@ Authentication procedure in Postman:<br>
 
 ### Example of api data
 
-- Vote without result:
+- Vote without answers:
 <pre>
 {
     "id": 100,
@@ -78,7 +78,7 @@ Authentication procedure in Postman:<br>
     "votes": []
 }</pre>
 
-- Vote with result:
+- Vote with answers:
 <pre>
 {
     "id": 119,
