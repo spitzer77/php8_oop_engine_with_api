@@ -61,8 +61,8 @@ The API return one random voting result in two mode:
 Authentication procedure in Postman:<br>
 - go to a tab 'Body' => tab 'form-data' or 'x-www-form-urlencoded'<br>
 - create two field 'email' and 'password' for user user1@i.ua/12345<br>
-- send Post request
-- show received data in result tab Body > Pretty 
+- send Post request<br>
+- try to show received data in result tab Body > Pretty 
 </td> 
 </tr>
 </table>
