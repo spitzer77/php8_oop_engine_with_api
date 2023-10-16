@@ -1,19 +1,24 @@
 ## Task
-- Create aggregator service for conducting fake surveys
-- Create a basic search form that will query the API using AJAX and display the results it receives from the backend. The searching result should be rendering to HTML table dynamically on the frontend, using reactive Vue.js.
-There should be some sort of searching indicator, a spinning icon or similar.
+- Create aggregator service for conducting a fake polls
+- A service that can provide the functionality of managing fakes (with
+  by a predetermined number of answer) polls.
+- The user of the service must be able to access the public part
+  programs, register and create any number of surveys, with
+  by the predetermined number of answers to one or another item
+- Implement this on a native MVC PHP engine with OOP
 
 ### Main functionality of the task:
 
 - Registration, login and logout page
-- Displaying vote list in a table 
-- Displaying answer of each vote
-- API for request random vote from all data or auth user
+- Displaying polls list in a table 
+- Displaying result of each polls
+- API for request random poll from all data or auth user
 
 ### Features
 
-- CRUD for vote and answer
+- CRUD for polls and answers
 - Error handling in forms
+- Sorting table data
 
 ## Stack
 - Back-end: PHP8, SQLite DB, Plates PHP template, Rest API
@@ -69,7 +74,7 @@ Authentication procedure in Postman:<br>
 
 ### Example of api data
 
-- Vote without answers:
+- Poll without answers:
 <pre>
 {
     "id": 100,
@@ -78,7 +83,7 @@ Authentication procedure in Postman:<br>
     "votes": []
 }</pre>
 
-- Vote with answers:
+- Poll with answers:
 <pre>
 {
     "id": 119,
@@ -117,6 +122,6 @@ Authentication procedure in Postman:<br>
 </tr>
 <tr>
 <td>Error</td>
-<td>You haven`t any personal vote</td>
+<td>You haven`t any personal poll</td>
 </tr>
 </table>
