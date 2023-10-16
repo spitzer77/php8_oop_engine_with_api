@@ -1,14 +1,22 @@
 <?php $this->layout('layouts/main') ?>
 
 <?php $this->start('page_content') ?>
+    <script src="/js/tablesort.js"></script>
+    <style>
+        .arrow {
+            color: gray;
+            margin-left: 5px;
+        }
+    </style>
+
     <div>
         <h3><?=$data['title']?></h3>
 
-        <table class="table table-striped">
+        <table class="table table-striped" id="tableSort">
             <thead>
             <tr>
-                <th scope="col">Вариант ответа</th>
-                <th scope="col">Кол-во</th>
+                <th scope="col" onclick="sortTable(0)" style="cursor: pointer;">Вариант ответа<span class="arrow"></span></th>
+                <th scope="col" onclick="sortTable(1)" style="cursor: pointer; width:100px;">Кол-во<span class="arrow"></span></th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
@@ -45,6 +53,11 @@
                 </td>
             </tr>
             <?php }?>
+            </tbody>
+        </table>
+
+        <table class="table table-striped">
+            </tbody>
             <tr>
                 <td>
                     <form method="post" action="/votes/<?=$data['vote'];?>/answer/create">

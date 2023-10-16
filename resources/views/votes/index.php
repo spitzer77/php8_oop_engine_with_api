@@ -1,16 +1,21 @@
 <?php $this->layout('layouts/main') ?>
 
 <?php $this->start('page_content') ?>
+    <script src="/js/tablesort.js"></script>
+    <style>
+        .arrow {
+            color: #808080;
+        }
+    </style>
     <div>
         <h3>Votes page</h3>
-
-        <table class="table table-striped">
+        <table class="table table-striped" id="tableSort">
             <thead>
             <tr>
-                <th scope="col">Опрос</th>
-                <th scope="col">Варианты</th>
-                <th scope="col">Статус</th>
-                <th scope="col">Дата</th>
+                <th scope="col" onclick="sortTable(0)" style="cursor: pointer">Опрос <span class="arrow"></span></th>
+                <th scope="col" onclick="sortTable(1)" style="cursor: pointer; width: 100px;">Ответов <span class="arrow"></span></th>
+                <th scope="col" onclick="sortTable(2)" style="cursor: pointer">Статус <span class="arrow"></span></th>
+                <th scope="col" onclick="sortTable(3)" style="cursor: pointer">Дата <span class="arrow"></span></th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
@@ -51,6 +56,11 @@
                 </tr>
                 <?php
             } ?>
+            </tbody>
+        </table>
+
+        <table class="table table-striped">
+        <tbody>
             <tr>
                 <td>
                     <form method="post" action="/votes/create">
