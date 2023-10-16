@@ -24,10 +24,15 @@ class AnswerController extends Controller
         }
     }
 
-    public function index(int $vote): string
+    private function getParentTitle(int $vote): string
     {
         $query = "SELECT title FROM votes WHERE id=$vote AND vote_id=0";
-        $title = $this->db->single($query);
+        return $this->db->single($query);
+    }
+
+    public function index(int $vote): string
+    {
+        $title = $this->getParentTitle($vote);
 
         if (empty($title)) {
             Route::redirect("/votes");
@@ -53,10 +58,12 @@ class AnswerController extends Controller
 
     public function edit($vote, $answer): string
     {
+        $title = $this->getParentTitle($vote);
+
         $rows = $this->getAnswerList($vote);
         $editRow = $this->arrayToIdKey($rows, 'id')[$answer];
 
-        return View::view2('answer.edit', compact('rows', 'editRow', 'vote'));
+        return View::view2('answer.edit', compact('rows', 'editRow', 'vote', 'title'));
     }
 
     public function update(int $vote, int $answer)
@@ -103,9 +110,11 @@ class AnswerController extends Controller
 
     public function create(int $vote)
     {
+        $title = $this->getParentTitle($vote);
+
         $rows = $this->getAnswerList($vote);
 
-        return View::view2('answer.create', compact('rows', 'vote'));
+        return View::view2('answer.create', compact('rows', 'vote', 'title'));
     }
 
     public function store($vote)
